@@ -1,13 +1,13 @@
-import { Injectable } from "@angular/core";
-import { HttpClient } from "@angular/common/http";
+import { Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
 
 @Injectable()
 export class RequestService {
   constructor(private http: HttpClient) {}
 
   getPeople() {
-    let request = this.http.get(
-      "http://agl-developer-test.azurewebsites.net/people.json"
+    const request = this.http.get(
+      'http://agl-developer-test.azurewebsites.net/people.json'
     );
     return request;
   }
@@ -17,8 +17,8 @@ export class RequestService {
       items => items && items.pets !== null && items.pets.length > 0
     );
     petsFiltered.map(i => {
-      for (let petObj of i.pets) {
-        if (petObj.type === "Cat") {
+      for (const petObj of i.pets) {
+        if (petObj.type === 'Cat') {
           arrayOfCats.push({ [i.gender]: petObj.name });
         }
       }
@@ -26,7 +26,7 @@ export class RequestService {
     return arrayOfCats;
   }
   getGenderOfOwners(allArray, genderOfOwner) {
-    let genderArray = [];
+    const genderArray = [];
     allArray.map(i => {
       if (Object.keys(i).includes(genderOfOwner)) {
         genderArray.push((i[genderOfOwner]));
