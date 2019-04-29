@@ -12,35 +12,26 @@ export class RequestService {
     return request;
   }
   getCats(people) {
+    const arrayOfCats = [];
     const petsFiltered = people.filter(
       items => items && items.pets !== null && items.pets.length > 0
     );
-    let arrayOfPets = [];
     petsFiltered.map(i => {
       for (let petObj of i.pets) {
         if (petObj.type === "Cat") {
-          arrayOfPets.push({ [i.gender]: petObj.name });
+          arrayOfCats.push({ [i.gender]: petObj.name });
         }
       }
     });
-    return arrayOfPets;
+    return arrayOfCats;
   }
-  getMaleOwners(allArray) {
-    let maleArray = [];
+  getGenderOfOwners(allArray, genderOfOwner) {
+    let genderArray = [];
     allArray.map(i => {
-      if (i.Male) {
-        maleArray.push(i.Male);
+      if (Object.keys(i).includes(genderOfOwner)) {
+        genderArray.push((i[genderOfOwner]));
       }
     });
-    return maleArray.sort();
-  }
-  getFemaleOwners(allArray) {
-    let femaleArray = [];
-    allArray.map(i => {
-      if (i.Female) {
-        femaleArray.push(i.Female);
-      }
-    });
-    return femaleArray.sort();
+    return genderArray.sort();
   }
 }

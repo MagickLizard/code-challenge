@@ -62,10 +62,10 @@ export class AppComponent {
     return this._requestService.getCats(data);
   }
   getMaleOwners(catsArray) {
-    return this._requestService.getMaleOwners(catsArray);
+    return this._requestService.getGenderOfOwners(catsArray, "Male");
   }
   getFemaleOwners(catsArray) {
-    return this._requestService.getFemaleOwners(catsArray);
+    return this._requestService.getGenderOfOwners(catsArray, "Female");
   }
 
   constructor(private _requestService: RequestService) {}
