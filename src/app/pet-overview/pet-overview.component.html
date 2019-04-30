@@ -1,0 +1,39 @@
+<section class="hero is-info">
+  <div class="hero-body">
+    <h2 class='title'> All pet information</h2>
+    <h2 class='subtitle'> All pets displayed by type and name.</h2>
+  </div>
+</section>
+<section class='section'>
+  <div class='container'>
+    <div class='column is-four-fifths'>
+      <div class='column'>
+        <div class="card">
+          <article class="tile is-child notification is-primary">
+            <p class="title">All Pets</p>
+          </article>
+          <div class="card-content">
+            <div class='columns'>
+              <div class='column'>
+                <h2 class='title'> Type of Animal</h2>
+              </div>
+              <div class='column'>
+                <h2 class='title'> Animal Name </h2>
+              </div>
+            </div>
+          </div>
+          <div class="card-content" *ngFor='let element of pets'>
+            <div class='columns'>
+              <div class='column'>
+                {{element.type}}
+              </div>
+              <div class='column'>
+                {{element.name}}
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
