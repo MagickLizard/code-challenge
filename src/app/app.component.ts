@@ -8,7 +8,7 @@ import { RequestService } from './request-service.service';
       <div class='hero-body'>
         <div class='container'>
           <h1 class='title'>
-            Data about cat owners and there cats
+            Names of cats and the gender of their owners
           </h1>
         </div>
       </div>
@@ -17,20 +17,20 @@ import { RequestService } from './request-service.service';
       <div class='container'>
         <div class='columns'>
           <div class='column is-one-sixth'>
-            <h2 class='title'>Female pet owners</h2>
+            <h2 class='title'>Female</h2>
             <div *ngFor='let petNames of ownerFemale'>
               <div>
-                Pet Name:
+              Cat Name:
                 {{ petNames }}
               </div>
             </div>
           </div>
           <br />
           <div class='column is-one-sixth'>
-            <h2 class='title'>Male pet owners</h2>
+            <h2 class='title'>Male</h2>
             <div *ngFor='let petNames of ownerMale'>
               <div>
-                Pet Name:
+              Cat Name:
                 {{ petNames }}
               </div>
             </div>
@@ -62,7 +62,7 @@ export class AppComponent {
     return this.requestService.getCats(data);
   }
   getMaleOwners(catsArray) {
-    return this.requestService.getGenderOfOwners(catsArray, 'Male');
+    return this.requestService.getGenderOfOwners(catsArray, 'Male'); // Passing a string as it makes it easier to add any gender.
   }
   getFemaleOwners(catsArray) {
     return this.requestService.getGenderOfOwners(catsArray, 'Female');
