@@ -12,13 +12,12 @@ export class RequestService {
     return request;
   }
   getAllPets(people) {
-    let arrayOfPets = [];
+    const arrayOfPets = [];
     const petsFiltered = people.filter(
       items => items && items.pets !== null && items.pets.length > 0
     );
     petsFiltered.map(i => {
       for (const petObj of i.pets) {
-        console.log('petObj', petObj)
         arrayOfPets.push(petObj);
       }
     });

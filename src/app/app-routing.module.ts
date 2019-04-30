@@ -1,10 +1,11 @@
-import { NgModule } from "@angular/core";
-import { Routes, RouterModule } from "@angular/router";
-import { PetOverviewComponent } from "./pet-overview/pet-overview.component";
-import { CatsOverviewComponent } from "./cats-overview/cats-overview.component";
+import { NgModule } from '@angular/core';
+import { Routes, RouterModule } from '@angular/router';
+import { PetOverviewComponent } from './pet-overview/pet-overview.component';
+import { CatsOverviewComponent } from './cats-overview/cats-overview.component';
+// import { CatsOverviewComponent } from './cats-overview/cats-overview.component'; //ADD NEW ROUTE FOR HOME INFO
 const routes: Routes = [
-  { path: "pets", component: PetOverviewComponent },
-  { path: "cats", component: CatsOverviewComponent }
+  { path: 'pets', component: PetOverviewComponent },
+  { path: 'cats', component: CatsOverviewComponent }
 ];
 
 @NgModule({
