@@ -4,7 +4,7 @@ import { RequestService } from '../request-service.service';
 @Component({
   selector: 'app-pet-overview',
   templateUrl: './pet-overview.component.html',
-  styleUrls: ['./pet-overview.component.scss']
+  styleUrls: ['./pet-overview.component.css']
 })
 export class PetOverviewComponent implements OnInit {
 
