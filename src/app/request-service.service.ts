@@ -41,7 +41,7 @@ export class RequestService {
     const genderArray = [];
     allArray.map(i => {
       if (Object.keys(i).includes(genderOfOwner)) {
-        genderArray.push((i[genderOfOwner]));
+        genderArray.push(i[genderOfOwner]);
       }
     });
     return genderArray.sort();

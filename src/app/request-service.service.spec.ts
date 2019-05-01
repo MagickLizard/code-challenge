@@ -7,6 +7,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { PetOverviewComponent } from './pet-overview/pet-overview.component';
 import { HeaderComponent } from './header/header.component';
 import { CatsOverviewComponent } from './cats-overview/cats-overview.component';
+import { HomeComponent } from './home/home.component';
 
 
 describe('RequestServiceService', () => {
@@ -17,7 +18,8 @@ describe('RequestServiceService', () => {
         AppComponent,
         PetOverviewComponent,
         HeaderComponent,
-        CatsOverviewComponent
+        CatsOverviewComponent,
+        HomeComponent
       ],
       providers: [RequestService],
     });

@@ -8,6 +8,7 @@ import { AppRoutingModule } from '../app-routing.module';
 import { PetOverviewComponent } from '../pet-overview/pet-overview.component';
 import { HeaderComponent } from '../header/header.component';
 import { AppComponent } from '../app.component';
+import { HomeComponent } from '../home/home.component';
 
 describe('CatsOverviewComponent', () => {
   beforeEach(() => {
@@ -17,7 +18,8 @@ describe('CatsOverviewComponent', () => {
         AppComponent,
         PetOverviewComponent,
         HeaderComponent,
-        CatsOverviewComponent
+        CatsOverviewComponent,
+        HomeComponent
       ],
       providers: [RequestService]
     }).compileComponents();

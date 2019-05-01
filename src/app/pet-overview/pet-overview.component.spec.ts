@@ -8,6 +8,7 @@ import { HeaderComponent } from '../header/header.component';
 import { AppComponent } from '../app.component';
 import { CatsOverviewComponent } from '../cats-overview/cats-overview.component';
 import { RequestService } from '../request-service.service';
+import { HomeComponent } from '../home/home.component';
 
 
 
@@ -20,7 +21,8 @@ describe('PetOverviewComponent', () => {
         AppComponent,
         PetOverviewComponent,
         HeaderComponent,
-        CatsOverviewComponent
+        CatsOverviewComponent,
+        HomeComponent
       ],
       providers: [RequestService]
     })
@@ -29,12 +31,6 @@ describe('PetOverviewComponent', () => {
   let component: PetOverviewComponent;
   let fixture: ComponentFixture<PetOverviewComponent>;
 
-  // beforeEach(async(() => {
-  //   TestBed.configureTestingModule({
-  //     declarations: [ PetOverviewComponent ]
-  //   })
-  //   .compileComponents();
-  // }));
 
   beforeEach(() => {
     fixture = TestBed.createComponent(PetOverviewComponent);

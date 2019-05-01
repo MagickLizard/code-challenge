@@ -7,6 +7,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { PetOverviewComponent } from './pet-overview/pet-overview.component';
 import { HeaderComponent } from './header/header.component';
 import { CatsOverviewComponent } from './cats-overview/cats-overview.component';
+import { HomeComponent } from './home/home.component';
 
 describe('AppComponent', () => {
   beforeEach(() => {
@@ -16,13 +17,12 @@ describe('AppComponent', () => {
         AppComponent,
         PetOverviewComponent,
         HeaderComponent,
-        CatsOverviewComponent
+        CatsOverviewComponent,
+        HomeComponent
       ],
       providers: [RequestService]
     });
   });
-
-
 
   it('should create the app', () => {
     const fixture = TestBed.createComponent(AppComponent);
@@ -37,13 +37,18 @@ describe('AppComponent', () => {
   //     'Names of cats and the gender of their owners'
   //   );
   // });
+  // it(`should have as title 'Names of cats and the gender of their owners'`, () => {
+  //   const fixture = TestBed.createComponent(AppComponent);
+  //   const app = fixture.debugElement.componentInstance;
+  //   expect(app.).toEqual(
+  //     'Names of cats and the gender of their owners'
+  //   );
+  // });
 
-  it('should render title in a h1 tag', () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    fixture.detectChanges();
-    const compiled = fixture.debugElement.nativeElement;
-    expect(compiled.querySelector('h1').textContent).toContain(
-      'Hi :)'
-    );
-  });
+  // it('should render title in a h1 tag', () => {
+  //   const fixture = TestBed.createComponent(AppComponent);
+  //   fixture.detectChanges();
+  //   const compiled = fixture.debugElement.nativeElement;
+  //   expect(compiled.querySelector('h1').textContent).toContain('Hi :)');
+  // });
 });
