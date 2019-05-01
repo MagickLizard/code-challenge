@@ -30,25 +30,4 @@ describe('AppComponent', () => {
     expect(app).toBeTruthy();
   });
 
-  // it(`should have as title 'Names of cats and the gender of their owners'`, () => {
-  //   const fixture = TestBed.createComponent(AppComponent);
-  //   const app = fixture.debugElement.componentInstance;
-  //   expect(app.h1).toEqual(
-  //     'Names of cats and the gender of their owners'
-  //   );
-  // });
-  // it(`should have as title 'Names of cats and the gender of their owners'`, () => {
-  //   const fixture = TestBed.createComponent(AppComponent);
-  //   const app = fixture.debugElement.componentInstance;
-  //   expect(app.).toEqual(
-  //     'Names of cats and the gender of their owners'
-  //   );
-  // });
-
-  // it('should render title in a h1 tag', () => {
-  //   const fixture = TestBed.createComponent(AppComponent);
-  //   fixture.detectChanges();
-  //   const compiled = fixture.debugElement.nativeElement;
-  //   expect(compiled.querySelector('h1').textContent).toContain('Hi :)');
-  // });
 });

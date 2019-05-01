@@ -25,3 +25,20 @@ Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protrac
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+
+
+## Changes I would make:
+
+Move URL in getPeople() into config.
+
+Add error handling in getPeople() so if something fails in the request its handled better.
+
+Change passing string to get by gender, to be based upon routes (Makes solution more extendable).
+
+Add a loading component.
+
+Fix mobile responsiveness - I am not using any device specific classes at the moment available in Bulma.
+
+Use e2e tests, I have written unit tests only (improve unit tests too).
+
+Enjoy!
