@@ -8,8 +8,7 @@ import { RequestService } from '../request-service.service';
 })
 export class CatsOverviewComponent implements OnInit {
 
-  constructor(private requestService: RequestService) {
-  }
+  constructor(private requestService: RequestService) {}
    public ownerMale;
    public ownerFemale;
 
@@ -23,9 +22,7 @@ export class CatsOverviewComponent implements OnInit {
         this.ownerMale = this.getMaleOwners(catsFound);
         this.ownerFemale = this.getFemaleOwners(catsFound);
       },
-      err => console.error(err),
-      () => console.log('done loading...')
-    );
+      err => console.error(err));
   }
   getCats(data) {
     return this.requestService.getCats(data);

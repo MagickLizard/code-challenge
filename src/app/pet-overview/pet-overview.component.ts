@@ -21,9 +21,7 @@ export class PetOverviewComponent implements OnInit {
       data => {
         this.pets = this.getAllPets(data);
       },
-      err => console.error(err),
-      () => console.log('done loading...')
-    );
+      err => console.error(err));
   }
   getAllPets(catsArray) {
     return this.requestService.getAllPets(catsArray);

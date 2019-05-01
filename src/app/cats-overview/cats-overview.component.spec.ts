@@ -1,4 +1,4 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { CatsOverviewComponent } from './cats-overview.component';
 import { RequestService } from '../request-service.service';
@@ -25,23 +25,65 @@ describe('CatsOverviewComponent', () => {
     }).compileComponents();
   });
   let component: CatsOverviewComponent;
-  let fixture: ComponentFixture<CatsOverviewComponent>;
+  let fixtureComp: ComponentFixture<CatsOverviewComponent>;
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(CatsOverviewComponent);
-    component = fixture.componentInstance;
-    fixture.detectChanges();
+    fixtureComp = TestBed.createComponent(CatsOverviewComponent);
+    component = fixtureComp.componentInstance;
+    fixtureComp.detectChanges();
   });
 
   it('should create', () => {
     expect(component).toBeTruthy();
   });
-  // it('should render title in a h1 tag', () => {
-  //   const fixture = TestBed.createComponent(component);
-  //   fixture.detectChanges();
-  //   const compiled = fixture.debugElement.nativeElement;
-  //   expect(compiled.querySelector('h1').textContent).toContain(
-  //     'Hi :)'
-  //   );
-  // });
+  describe('get request', () => {
+    it('#should return undefined', (done: DoneFn) => {
+      const result = component.getPeople();
+      expect(result).toEqual(undefined);
+      done();
+    });
+  });
+
+  describe('get cats', () => {
+    it('#should return array of cats', (done: DoneFn) => {
+      const fixture = [
+        {
+          name: 'Bob',
+          gender: 'Male',
+          age: 23,
+          pets: [{ name: 'Garfield', type: 'Cat' }]
+        }
+      ];
+      const mockResult = [Object({ Male: 'Garfield' })];
+      const result = component.getCats(fixture);
+      expect(result).toEqual(mockResult);
+      done();
+    });
+  });
+
+  describe('Male owners', () => {
+    it('#should return array of male owned cats', (done: DoneFn) => {
+      const fixture = [Object({ Male: 'Garfield' })];
+      const mockResult = ['Garfield'];
+      const result = component.getMaleOwners(fixture);
+      expect(result).toEqual(mockResult);
+      done();
+    });
+  });
+
+  describe('Female owners', () => {
+    it('#should return array of female owned cats', (done: DoneFn) => {
+      const fixture = [Object({ Female: 'Garfield' })];
+      const mockResult = ['Garfield'];
+      const result = component.getFemaleOwners(fixture);
+      expect(result).toEqual(mockResult);
+      done();
+    });
+    it('#should empty array for unspecified', (done: DoneFn) => {
+      const fixture = [Object({ NA: 'Garfield' })];
+      const result = component.getFemaleOwners(fixture);
+      expect(result).toEqual([]);
+      done();
+    });
+  });
 });
